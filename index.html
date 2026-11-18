@@ -1,1 +1,1174 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal Portfolio Nindi Serliana - Entrepreneur and Web Enthusiast">
+<title>Nindi Serliana | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #050713;
+    --bg2: #0a1024;
+    --card: #0d162c;
+    --purple: #9657ff;
+    --blue: #327bff;
+    --cyan: #28d9ff;
+    --white: #f7f8ff;
+    --muted: #a6aec4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+    scroll-margin-top: 80px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-title span {
+    color: var(--purple);
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 50px;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8, 12, 27, .94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(150, 87, 255, .18);
+}
+
+.navbar {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: #d5d9e8;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 27px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+    radial-gradient(ellipse at 80% 35%, rgba(117, 43, 255, .18), transparent 35%),
+    radial-gradient(ellipse at 10% 90%, rgba(0, 145, 255, .12), transparent 40%),
+    var(--bg);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-radial-gradient(
+        ellipse at 80% 50%,
+        transparent 0 25px,
+        rgba(139, 104, 255, .10) 26px 27px
+    );
+    opacity: .5;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h4 {
+    color: var(--cyan);
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #a16aff, #35cfff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-text h2 {
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.hero-text p {
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 550px;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 27px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: linear-gradient(110deg, #7042dc, #337eff);
+    box-shadow: 0 0 22px rgba(122, 77, 255, .35);
+}
+
+.btn-outline {
+    border: 1px solid var(--purple);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(117, 87, 255, .5);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-frame {
+    width: 320px;
+    height: 390px;
+    border-radius: 25px;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    box-shadow: 0 0 45px rgba(126, 77, 255, .25);
+    transform: rotate(2deg);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 21px;
+    display: block;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--bg2);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-card {
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid rgba(125, 96, 255, .3);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.about-card .symbol {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-size: 22px;
+    color: var(--cyan);
+}
+
+.about-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.about-content h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: var(--muted);
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* EDUCATION */
+
+.education {
+    background: var(--bg);
+}
+
+.education-list {
+    max-width: 750px;
+    margin: auto;
+    border-left: 2px solid var(--purple);
+    padding-left: 30px;
+}
+
+.edu-item {
+    position: relative;
+    background: var(--card);
+    border: 1px solid rgba(139, 104, 255, .18);
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.edu-item::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+}
+
+.edu-item h3 {
+    color: var(--cyan);
+    font-size: 17px;
+}
+
+.edu-item p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* SKILLS */
+
+.skills {
+    background: var(--bg2);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    padding: 27px 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(122, 91, 255, .2);
+    text-align: center;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(48, 170, 255, .15);
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-size: 14px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+/* PROJECTS */
+
+.projects {
+    background: var(--bg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid rgba(130, 101, 255, .25);
+    border-radius: 17px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 0 25px rgba(109, 74, 255, .15);
+}
+
+.project-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #10182c;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--cyan);
+}
+
+.project-info p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.project-tags span {
+    font-size: 10px;
+    background: rgba(137, 86, 255, .15);
+    color: #c8b2ff;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background: var(--bg2);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.experience-card {
+    padding: 25px;
+    background: var(--card);
+    border-radius: 15px;
+    border: 1px solid rgba(132, 100, 255, .2);
+}
+
+.experience-card .exp-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.experience-card h3 {
+    color: var(--cyan);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CERTIFICATES */
+
+.certificates {
+    background: var(--bg);
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.certificate-card {
+    padding: 30px;
+    border-radius: 15px;
+    background: var(--card);
+    border: 1px solid rgba(129, 94, 255, .25);
+    text-align: center;
+}
+
+.certificate-card .cert-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.certificate-card h3 {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.certificate-card a {
+    color: var(--cyan);
+    font-size: 13px;
+    border: 1px solid var(--cyan);
+    padding: 9px 20px;
+    border-radius: 7px;
+    display: inline-block;
+    transition: .3s;
+}
+
+.certificate-card a:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--bg2);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: var(--card);
+    border: 1px solid rgba(129, 94, 255, .25);
+    border-radius: 15px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+}
+
+.contact-card .contact-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+footer {
+    background: #03050d;
+    border-top: 1px solid rgba(135, 92, 255, .2);
+    text-align: center;
+    padding: 28px 15px;
+}
+
+footer h3 {
+    font-size: 22px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero-content {
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .container {
+        width: 90%;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #080d1d;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        border-bottom: 1px solid var(--purple);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .hero {
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        grid-row: 1;
+        margin-bottom: 15px;
+    }
+
+    .profile-frame {
+        width: 230px;
+        height: 280px;
+    }
+
+    .hero-text h1 {
+        font-size: 39px;
+    }
+
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid,
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="container navbar">
+        <a href="#home" class="logo">Nindi.</a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+
+        <div class="hero-text">
+            <h4>WELCOME TO MY PORTFOLIO</h4>
+
+            <h1>
+                Hi, I'm <span class="gradient-text">Nindi Serliana</span>
+            </h1>
+
+            <h2>
+                Mahasiswa | <span class="gradient-text">Entrepreneur & Web Enthusiast</span>
+            </h2>
+
+            <p>
+                Halo! Saya Nindi Serliana, mahasiswa Kewirausahaan
+                dari UIN Mataram. Saya memiliki ketertarikan pada
+                dunia bisnis, kreativitas, dan teknologi digital.
+                Saya senang belajar hal baru, mengembangkan ide,
+                serta menciptakan peluang melalui inovasi.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">See My Projects ↗</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="profile-frame">
+                <img src="foto-profil.png" alt="Foto Profil Nindi Serliana">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT ME -->
+
+<section class="about" id="about">
+    <div class="container">
+
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-desc">Kenali saya lebih dekat</p>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+                <div class="symbol">👩🏻‍💻</div>
+                <h3>Nindi Serliana</h3>
+                <p>Entrepreneur | Web Enthusiast</p>
+                <p>Mahasiswa Kewirausahaan</p>
+            </div>
+
+            <div class="about-content">
+                <h3>Halo guys! 👋 Kenalin, aku Nindi!</h3>
+
+                <p>
+                    Aku Nindi Serliana, mahasiswa Kewirausahaan dari
+                    UIN Mataram. Aku tertarik sama dunia bisnis,
+                    kreativitas, dan teknologi digital.
+                    Sedikit-sedikit aku juga punya skill bikin website
+                    dan toko online.
+                </p>
+
+                <p style="margin-top:15px;">
+                    Aku orangnya masih suka belajar hal baru,
+                    mencoba sesuatu yang berbeda, dan pastinya
+                    pengen terus upgrade diri. Buat aku, hidup itu
+                    tentang mencoba, berkembang, dan menciptakan
+                    peluang. Karena siapa tahu, hal kecil yang kita
+                    mulai hari ini bisa jadi sesuatu yang besar
+                    di masa depan.
+                </p>
+
+                <p style="margin-top:15px;color:#28d9ff;">
+                    Nice to meet you all! Let's grow and make
+                    something great! 🚀
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+    <div class="container">
+
+        <h2 class="section-title">My <span>Education</span></h2>
+        <p class="section-desc">Perjalanan pendidikan saya</p>
+
+        <div class="education-list">
+
+            <div class="edu-item">
+                <h3>🎓 Sekolah Dasar</h3>
+                <p>SD Negeri 2 Bunut Baok</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>🎓 Sekolah Menengah Pertama</h3>
+                <p>SMPN 4 Praya</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>🎓 Madrasah Aliyah</h3>
+                <p>MAN 1 Lombok Tengah</p>
+            </div>
+
+            <div class="edu-item">
+                <h3>🎓 Perguruan Tinggi</h3>
+                <p>UIN Mataram – Program Studi Kewirausahaan</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+    <div class="container">
+
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <p class="section-desc">Kemampuan yang terus saya kembangkan</p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">📄</div>
+                <h3>Microsoft Word</h3>
+                <p>Pengolahan dokumen</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3>Microsoft Excel</h3>
+                <p>Pengolahan data</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📽️</div>
+                <h3>PowerPoint</h3>
+                <p>Presentasi</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>HTML & CSS</h3>
+                <p>Dasar pengembangan website</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>Graphic Design</h3>
+                <p>Desain grafis dasar</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💬</div>
+                <h3>Communication</h3>
+                <p>Komunikasi yang baik</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🤝</div>
+                <h3>Teamwork</h3>
+                <p>Kerja sama tim</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">⏰</div>
+                <h3>Time Management</h3>
+                <p>Manajemen waktu dan tanggung jawab</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+    <div class="container">
+
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <p class="section-desc">Beberapa proyek yang pernah saya kembangkan</p>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <img
+                    src="serli-store.png"
+                    alt="Tampilan website Serli Store"
+                    class="project-image"
+                >
+
+                <div class="project-info">
+                    <h3>01. Serli Store</h3>
+
+                    <p>
+                        Serli Store merupakan proyek pembuatan toko
+                        online yang dikembangkan untuk memudahkan
+                        konsumen melihat berbagai produk dan melakukan
+                        pemesanan secara online. Website ini memiliki
+                        tampilan katalog produk, kategori, keranjang
+                        belanja, dan pemesanan melalui WhatsApp.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Online Store</span>
+                    </div>
+
+                    <a
+                        href="https://nindi-serliana.github.io/toko-serli/"
+                        target="_blank"
+                        rel="noopener"
+                        class="btn btn-primary"
+                        style="margin-top:20px;"
+                    >
+                        Visit Project ↗
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-image" style="height:240px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#28205d,#0b1126);">
+                    <div style="text-align:center;">
+                        <div style="font-size:65px;">👩🏻‍💻</div>
+                        <h2 class="gradient-text">PERSONAL PORTFOLIO</h2>
+                        <p style="color:#a6aec4;font-size:12px;margin-top:10px;">My Digital Identity</p>
+                    </div>
+                </div>
+
+                <div class="project-info">
+                    <h3>02. Personal Portfolio</h3>
+
+                    <p>
+                        Website personal portfolio ini dibuat
+                        sebagai media untuk memperkenalkan diri,
+                        menampilkan latar belakang pendidikan,
+                        keterampilan, pengalaman, sertifikat,
+                        serta berbagai proyek yang pernah saya
+                        kembangkan.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Responsive Design</span>
+                        <span>Portfolio</span>
+                    </div>
+
+                    <a href="#home" class="btn btn-primary" style="margin-top:20px;">
+                        Explore Portfolio ↗
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+    <div class="container">
+
+        <h2 class="section-title">My <span>Experience</span></h2>
+        <p class="section-desc">Pengalaman dan kegiatan yang pernah saya lakukan</p>
+
+        <div class="experience-grid">
+
+            <div class="experience-card">
+                <div class="exp-icon">🛒</div>
+                <h3>Pengembangan Serli Store</h3>
+                <p>
+                    Mengembangkan proyek toko online sebagai
+                    sarana belajar bisnis digital dan pembuatan
+                    website e-commerce.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-icon">🌐</div>
+                <h3>Website Development</h3>
+                <p>
+                    Membuat website personal portfolio untuk
+                    menampilkan identitas, keterampilan,
+                    pendidikan, dan hasil karya.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <div class="exp-icon">📚</div>
+                <h3>Academic & Entrepreneurship</h3>
+                <p>
+                    Mengikuti kegiatan akademik dan mengembangkan
+                    berbagai proyek kewirausahaan sebagai bagian
+                    dari proses pembelajaran.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+
+<section class="certificates" id="certificates">
+    <div class="container">
+
+        <h2 class="section-title">My <span>Certificates</span></h2>
+        <p class="section-desc">Sertifikat dan dokumen pendukung</p>
+
+        <div class="certificate-grid">
+
+            <div class="certificate-card">
+                <div class="cert-icon">🏆</div>
+                <h3>Certificate 01</h3>
+                <a
+                    href="https://claude.ai/api/9cc6e2a3-070e-477a-9737-c4dea30119bc/files/5af7bdf1-094c-4d9e-93bd-73dbbc4fb18a/document_pdf"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Certificate ↗
+                </a>
+            </div>
+
+            <div class="certificate-card">
+                <div class="cert-icon">🎖️</div>
+                <h3>Certificate 02</h3>
+                <a
+                    href="https://claude.ai/api/9cc6e2a3-070e-477a-9737-c4dea30119bc/files/9a68f297-e0d7-4e7d-a0ff-079fa03bf153/document_pdf"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Certificate ↗
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <p class="section-desc">
+            Jangan ragu untuk menghubungi saya!
+        </p>
+
+        <div class="contact-grid">
+
+            <a
+                href="https://www.instagram.com/nindia6255/"
+                target="_blank"
+                rel="noopener"
+                class="contact-card"
+            >
+                <div class="contact-icon">📸</div>
+                <h3>Instagram</h3>
+                <p>@nindia6255</p>
+            </a>
+
+            <a
+                href="mailto:Serliananindi@gmail.com"
+                class="contact-card"
+            >
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>Serliananindi@gmail.com</p>
+            </a>
+
+            <a
+                href="https://wa.me/6285945599813"
+                target="_blank"
+                rel="noopener"
+                class="contact-card"
+            >
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>085945599813</p>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h3>Nindi Serliana</h3>
+    <p>Entrepreneur | Web Enthusiast</p>
+    <p style="margin-top:12px;">
+        Copyright © 2026 Nindi Serliana. All Rights Reserved.
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    const isOpen = navLinks.classList.toggle("active");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+    });
+});
+</script>
+
+</body>
+</html>
